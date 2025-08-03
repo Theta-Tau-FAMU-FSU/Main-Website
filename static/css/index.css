@@ -1,3 +1,42 @@
+* {
+    margin: 0;
+}
+
 .Header {
+    padding: 0.5rem 1rem 0.5rem 1rem;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #750000;
+}
+
+.Header-Content {
+    display: flex;
+    justify-content: space-around;
+    width: 20vw;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: 0 100%;                     /* bottom left */
+    background-size: 0% 2px;                         /* start at 0 % width */
+
+    transition: background-size .3s ease;            /* swipe duration */
+
+}
+
+a:hover
+{
+    color: lightcoral;
+
+    background-size: 100% 2px;                       /* grow to full width */
+    transition: color .3s ease, background-size .3s ease;            /* swipe duration */
+}
+
+.image {
+    width: 2vw;
 }
