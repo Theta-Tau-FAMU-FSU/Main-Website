@@ -10,7 +10,7 @@
     <header class="Header">
         <div class="Header-Content"></div>
         <div>
-            <img class="image" src="{{ url_for('static', filename='images/ThetaTauIcon.png') }}">
+            <img class="icon" src="{{ url_for('static', filename='images/ThetaTauIcon.png') }}">
         </div>
         <div class="Header-Content">
             <p><a href="https://thetatau.org" target="_blank" rel="noopener">Home</a></p>
@@ -19,9 +19,14 @@
             <p><a href="https://thetatau.org" target="_blank" rel="noopener">More</a></p>
         </div>
     </header>
-    <div>
-        <p>Test</p>
+    <div class="carousel">
+            <img src="{{ url_for('static', filename='images/slide1.jpg') }}">
+            <img src="{{ url_for('static', filename='images/slide2.jpg') }}">
+            <img src="{{ url_for('static', filename='images/slide1.jpg') }}">
+            <img src="{{ url_for('static', filename='images/slide1.jpg') }}">
+            <img src="{{ url_for('static', filename='images/slide1.jpg') }}">
     </div>
     
+    <script src="{{ url_for('static', filename='js/slider.js') }}"></script>
 </body>
 </html>
