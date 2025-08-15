@@ -69,25 +69,55 @@ a:hover
 }
 
 .banner {
+    position: relative;
     height: 80vh;
-    background-image: linear-gradient(rgba(80,0,0,0.20)),
-                      url("/static/images/slide3.jpg");
-    background-repeat: no-repeat;
-    background-position: 50% 80%;
-    
+    font-family: "Roboto";
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
+    overflow-y: hidden;
+}
+
+.banner::before {
+    content: "";
+    inset: -6%;
+    position: absolute;
+    background-image: url("/static/images/slide3.jpg");
+    background-size: cover;
+    background-position: 50% 70%;
+    transform: translateY(0) scale(1.06);
+    will-change: transform;
+    z-index: 0;
+}
+.banner::after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(rgba(80, 0, 0, 0.20));
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@supports (animation-timeline: scroll()) {
+    .banner::before {
+        animation: parallaxUp linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 800px;
+    }
+
+    @keyframes parallaxUp {
+        from { transform: translateY(-8%)  scale(1.06); }
+        to   { transform: translateY(32%) scale(1.06); }
+    }
 }
 
 .banner div {
     display: flex;
     align-items: center;
     flex-direction: column;
-    color: white;
-    font-family: "Roboto";
     height: 30vh;
-
+    z-index: 2;
 }
 
 .banner h1 {
@@ -98,21 +128,6 @@ a:hover
 .banner h2 {
     margin-bottom: 8px;
     font-size: 40px;
-}
-
-@supports (animation-timeline: scroll()) {
-    .banner {
-        animation: centerToTop linear both;
-
-        animation-timeline: scroll(root);
-        animation-range: 0 800px;
-    }
-
-    @keyframes centerToTop {
-        from { background-position: 50% 80%;}
-        to { background-position: 50% 0%;}
-        
-    }
 }
 
 .brotherhood {
@@ -137,7 +152,8 @@ a:hover
 }
 
 .cards p {
-    font-size: x-large;
+    width: 30rem;
+    font-size: large;
 }
 
 .brotherhood-photo {
