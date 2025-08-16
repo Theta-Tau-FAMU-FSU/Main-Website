@@ -17,7 +17,7 @@
     width: 20vw;
 }
 
-a {
+.Header-Content a {
     color: #800000;
     font-size: large;
     font-family: "Roboto";
@@ -32,7 +32,7 @@ a {
 
 }
 
-a:hover
+.Header-Content a:hover
 {
     color: #dfb80c;
     background-size: 100% 2px;                       /* grow to full width */
@@ -44,24 +44,26 @@ a:hover
 }
 
 .About {
-    height: 20vh;
+    height: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #800000;
     font-family: "Roboto";
     text-decoration: none;
-    margin-bottom: 2rem;
 }
 
 .About h1 {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
+    overflow-y: hidden;
+    padding-top: 40px;
+    padding-bottom: 55px;
 }
 
 .About p {
+    overflow-y: hidden;
     font-size: large;
     text-align: center;
+    padding-bottom: 50px;
 }
 
 .brotherhood {
@@ -121,12 +123,12 @@ a:hover
 }
 
 .banner h1 {
-    margin-bottom: 8px;
+    padding-bottom: 8px;
     font-size: 60px;
 }
 
 .banner h2 {
-    margin-bottom: 8px;
+    padding-bottom: 8px;
     font-size: 40px;
 }
 
@@ -136,7 +138,8 @@ a:hover
     align-items: center;
     height: 50vh;
     width: 100vw;
-    margin-top: 60px;
+    padding-top: 60px;
+    padding-bottom: 20px;
     background-color: #ececec;
     text-align: center;
 }
@@ -151,10 +154,19 @@ a:hover
     font-family: "Roboto";
 }
 
-.cards p {
-    width: 30rem;
-    font-size: large;
+@media screen and (min-width: 1200px) {
+    .cards p {
+        font-size: small;
+    }
+    
 }
+
+@media screen and (min-width: 1600px) {
+    .cards p {
+        font-size: large;
+    }
+}
+
 
 .brotherhood-photo {
     height: 30vh;
@@ -165,13 +177,126 @@ a:hover
     aspect-ratio: 16/9;
 }
 
-.stuff {
-    height: 16vh;
+.info {
+    overflow-y: hidden;
+    height: 20vh;
     background-color: #1f1f1f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.Links {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
+.Links div {
+    text-align: left;
+}
+
+.Links a {
+    color: white;
+    text-decoration: none;
+
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0% 2px;
+    transition: background-size .3s ease;
+}
+
+.Links a:hover {
+    background-size: 100% 1px;
+    transition: color .3s ease, background-size .3s ease;
 }
 
 .Line {
-
     margin-left: 8rem;
     margin-right: 8rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.Rush {
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+    font-family: "Roboto";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.Rush::before {
+    content: "";
+    inset: -16%;
+    position: absolute;
+    background-image: url("/static/images/rush_background.jpg");
+    background-size: cover;
+    background-position: 50% 40%;
+    transform: translateY(0) scale(1.06);
+    will-change: transform;
+    z-index: 0;
+}
+.Rush::after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(rgba(40, 0, 0, 0.20));
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@supports (animation-timeline: scroll()) {
+    .Rush::before {
+        animation: parallax_down linear both;
+        animation-timeline: scroll(root);
+        animation-range: 600px 1800px;
+    }
+
+    @keyframes parallax_down {
+        from { transform: translateY(-16%)  scale(1.06); }
+        to   { transform: translateY(16%) scale(1.06); }
+    }
+}
+
+.Rush div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 30vh;
+    z-index: 2;
+}
+
+.Rush h1 {
+    padding-bottom: 8px;
+    overflow-y: hidden;
+    font-size: 60px;
+}
+
+.Rush h2 {
+    padding-bottom: 8px;
+    overflow-y: hidden;
+    font-size: 40px;
+}
+
+.Rush button {
+    overflow-y: hidden;
+    background-color: #bd0000;
+    color: white;
+    border: none;
+    outline: inherit;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transform: translate(0);
+    transition: transform 500ms ease;
+}
+
+.Rush button:hover {
+    transform: translateY(-8px);
 }
