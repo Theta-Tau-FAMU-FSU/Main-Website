@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Theta Tau | Phi Delta Chapter</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="Header">
         <div class="Header-Content"></div>
         <div>
-            <img class="icon" src="{{ url_for('static', filename='images/ThetaTauIcon.png') }}">
+            <img class="icon" src="{{ url_for('static', filename='images/ThetaTauIcon2.png') }}">
         </div>
         <div class="Header-Content">
             <p><a href="https://thetatau.org" target="_blank" rel="noopener">Home</a></p>
@@ -19,14 +22,38 @@
             <p><a href="https://thetatau.org" target="_blank" rel="noopener">More</a></p>
         </div>
     </header>
-    <div class="carousel">
-            <img src="{{ url_for('static', filename='images/slide1.jpg') }}">
-            <img src="{{ url_for('static', filename='images/slide2.jpg') }}">
-            <img src="{{ url_for('static', filename='images/slide1.jpg') }}">
-            <img src="{{ url_for('static', filename='images/slide1.jpg') }}">
-            <img src="{{ url_for('static', filename='images/slide1.jpg') }}">
+    <div class="banner">
+        <div>
+            <h1>Theta Tau at FAMU & FSU</h1>
+            <h2>Phi Delta Chapter</h2>
+            <h3>A PREMIER CO-ED PROFESSIONAL ENGINEERING FRATERNITY </h3>
+        </div>
     </div>
-    
-    <script src="{{ url_for('static', filename='js/slider.js') }}"></script>
+    <div class="About">
+        <h1>Who are we?</h1>
+        <p>
+            Theta Tau is a premier co-ed professional engineering fraternity at Florida Agricultural and Mechanical University and Florida State University.<br>We're the only joint Chapter
+            of its kind in Theta Tau.
+        </p>
+    </div>
+    <hr class="Line">
+    <div class="brotherhood">
+        <div class="cards">
+            <h2>Brotherhood</h2>
+            <img src="{{ url_for('static', filename='images/brotherhood.jpg') }}" class="brotherhood-photo">
+            <p>Have made friendships and connections that they will maintain for the rest of their lives.</p>
+        </div>
+        <div class="cards">
+            <h2>Professional</h2>
+            <img src="{{ url_for('static', filename='images/Professional.jpg') }}" class="brotherhood-photo">
+            <p>Members of Theta Tau are prepared for the job market, network, and apply their learning at work.</p>
+        </div>
+        <div class="cards">
+            <h2>Service</h2>
+            <img src="{{ url_for('static', filename='images/Service.jpg') }}" class="brotherhood-photo">
+            <p>Members of Theta Tau make an impact on the world around them through service and philanthropic acts.</p>
+        </div>
+    </div>
+    <div class="stuff"></div>
 </body>
 </html>

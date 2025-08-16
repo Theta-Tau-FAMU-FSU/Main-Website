@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .Header {
@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #750000;
+    background-color: #ffffff;
 }
 
 .Header-Content {
@@ -18,9 +18,9 @@
 }
 
 a {
-    color: white;
+    color: #800000;
     font-size: large;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Roboto";
     text-decoration: none;
 
     background-image: linear-gradient(currentColor, currentColor);
@@ -34,7 +34,7 @@ a {
 
 a:hover
 {
-    color: lightcoral;
+    color: #dfb80c;
     background-size: 100% 2px;                       /* grow to full width */
     transition: color .3s ease, background-size .3s ease;            /* swipe duration */
 }
@@ -43,24 +43,135 @@ a:hover
     width: 5vh;
 }
 
-.carousel {
-    width: 100vw;
-    height: 80vh;
+.About {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #800000;
+    font-family: "Roboto";
+    text-decoration: none;
+    margin-bottom: 2rem;
+}
+
+.About h1 {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.About p {
+    font-size: large;
+    text-align: center;
+}
+
+.brotherhood {
+    display: flex;
+}
+
+.banner {
     position: relative;
-    overflow: hidden;
+    height: 80vh;
+    font-family: "Roboto";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow-y: hidden;
 }
 
-.carousel img {
-    object-fit: cover;
-    object-position: center 70%;
+.banner::before {
+    content: "";
+    inset: -6%;
     position: absolute;
-    width: 100%;
-    height: 100%;
+    background-image: url("/static/images/slide3.jpg");
+    background-size: cover;
+    background-position: 50% 70%;
+    transform: translateY(0) scale(1.06);
+    will-change: transform;
+    z-index: 0;
+}
+.banner::after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(rgba(80, 0, 0, 0.20));
     inset: 0;
-    opacity: 0;
-    transition: opacity .8s ease;
+    pointer-events: none;
+    z-index: 1;
 }
 
-.carousel img.active{
-    opacity: 1;
+@supports (animation-timeline: scroll()) {
+    .banner::before {
+        animation: parallaxUp linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 800px;
+    }
+
+    @keyframes parallaxUp {
+        from { transform: translateY(-8%)  scale(1.06); }
+        to   { transform: translateY(32%) scale(1.06); }
+    }
+}
+
+.banner div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 30vh;
+    z-index: 2;
+}
+
+.banner h1 {
+    margin-bottom: 8px;
+    font-size: 60px;
+}
+
+.banner h2 {
+    margin-bottom: 8px;
+    font-size: 40px;
+}
+
+.brotherhood {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50vh;
+    width: 100vw;
+    margin-top: 60px;
+    background-color: #ececec;
+    text-align: center;
+}
+
+.cards {
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    color: #800000;
+    font-family: "Roboto";
+}
+
+.cards p {
+    width: 30rem;
+    font-size: large;
+}
+
+.brotherhood-photo {
+    height: 30vh;
+    padding: 20px;
+    display: block;
+    object-fit: cover;
+    border-radius: 24px;
+    aspect-ratio: 16/9;
+}
+
+.stuff {
+    height: 16vh;
+    background-color: #1f1f1f;
+}
+
+.Line {
+
+    margin-left: 8rem;
+    margin-right: 8rem;
 }
