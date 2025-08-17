@@ -1,6 +1,20 @@
 * {
     margin: 0;
+}
+
+html {
     overflow-x: hidden;
+}
+
+body {
+    overflow-y: visible;
+    overflow-x: hidden;
+}
+
+:where(*):not(html, body) { overflow: clip; }
+
+@supports not (overflow: clip) {
+  :where(*):not(html, body) { overflow: hidden; }
 }
 
 .Header {
@@ -137,13 +151,11 @@ nav {
 }
 
 .About h1 {
-    overflow-y: hidden;
     padding-top: 40px;
     padding-bottom: 55px;
 }
 
 .About p {
-    overflow-y: hidden;
     font-size: large;
     text-align: center;
     padding-bottom: 50px;
@@ -187,7 +199,7 @@ nav {
         width: 400px;
     }
     .About {
-        height: 180px;
+        height: 220px;
     }
     .Line {
         margin-right: 2rem;
@@ -209,7 +221,6 @@ nav {
     align-items: center;
     justify-content: center;
     color: white;
-    overflow-y: hidden;
 }
 
 .banner::before {
@@ -222,14 +233,6 @@ nav {
     transform: translateY(0) scale(1.06);
     will-change: transform;
     z-index: 0;
-}
-.banner::after {
-    content: "";
-    position: absolute;
-    background: linear-gradient(rgba(80, 0, 0, 0.30));
-    inset: 0;
-    pointer-events: none;
-    z-index: 1;
 }
 
 .banner h1 {
@@ -245,7 +248,7 @@ nav {
 @media screen and (max-width: 1200px ) {
     .banner h1 {
         font-size: 3rem;
-    }
+        }
     .banner h2 {
     font-size: 2.5rem;
 }
@@ -299,7 +302,7 @@ nav {
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 30vh;
+    height: 35vh;
     z-index: 2;
 }
 
@@ -325,6 +328,10 @@ nav {
     font-family: "Roboto";
 }
 
+.cards p {
+    font-size: large;
+}
+
 
 .brotherhood-photo {
     height: 30vh;
@@ -336,7 +343,6 @@ nav {
 }
 
 .info {
-    overflow-y: hidden;
     height: 20vh;
     background-color: #1f1f1f;
     display: flex;
@@ -374,7 +380,6 @@ nav {
 .Rush {
     height: 80vh;
     position: relative;
-    overflow: hidden;
     font-family: "Roboto";
     display: flex;
     align-items: center;
@@ -392,14 +397,6 @@ nav {
     transform: translateY(0) scale(1.06);
     will-change: transform;
     z-index: 0;
-}
-.Rush::after {
-    content: "";
-    position: absolute;
-    background: linear-gradient(rgba(40, 0, 0, 0.20));
-    inset: 0;
-    pointer-events: none;
-    z-index: 1;
 }
 
 @supports (animation-timeline: scroll()) {
@@ -425,18 +422,15 @@ nav {
 
 .Rush h1 {
     padding-bottom: 8px;
-    overflow-y: hidden;
     font-size: 60px;
 }
 
 .Rush h2 {
     padding-bottom: 8px;
-    overflow-y: hidden;
     font-size: 40px;
 }
 
 .Rush button {
-    overflow-y: hidden;
     background-color: #bd0000;
     color: white;
     border: none;
@@ -492,12 +486,12 @@ nav {
     }
     .cards p {
         font-size: medium;
-    }
+        }
     .brotherhood {
         flex-direction: column;
         justify-content: space-between;
         padding-top: 10px;
-        height: 160vh;
+        height: 190vh;
     }
     .cards {
         width: 100%;
@@ -526,13 +520,12 @@ nav {
     }
 }
 
-
 @media screen and (max-width: 600px ) {
     .Rush h1 {
         font-size: 2rem;
     }
     .brotherhood {
-        height: 140vh;
+        height: 130vh;
     }
     .brotherhood-photo {
         border-radius: 4px;
@@ -540,6 +533,19 @@ nav {
         height: 25vh;
     }
 }
+
+@media screen and (max-height: 800px ) {
+    .About {
+        height: 35vh;
+    }
+}
+
+@media screen and (max-height: 400px ) {
+    .info {
+        height: 120vh;
+    }
+}
+
 
 @media screen and (max-width: 400px ) {
     .Rush h1 {
