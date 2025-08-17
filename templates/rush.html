@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rush | Phi Delta Chapter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/rush.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="Header">
+        <div class="Header-Content"></div>
+        <div>
+            <img class="icon" src="{{ url_for('static', filename='images/ThetaTauIcon2.png') }}">
+        </div>
+        <div class="Header-Content">
+            <p><a href="{{ url_for('index') }}" target="_self" rel="noopener">Home</a></p>
+            <!-- <p><a href="https://thetatau.org" target="_blank" rel="noopener">Portfolio</a></p> -->
+            <p><a href="{{ url_for('rush') }}" target="_self" rel="noopener">Rush</a></p>
+            <p><a href="https://thetatau.org" target="_blank" rel="noopener">More</a></p>
+        </div>
+    </header>
+    <div class="recruit">
+        <h1>Recruitment</h1>
+    </div>
+    <div class="timeline">
+        <h1>Rush Timeline</h1>
+        <p>TBD</p>
+    </div>
+    <div class="info">
+        <div class="Links">
+            <div>
+                <h2>Theta Tau<br>Phi Delta</h2>
+                <br>
+                <p>Phi Delta Chapter</p>
+                <p>Tallahassee, Florida</p>
+            </div>
+            <div>
+                <h2>General</h2>
+                <br>
+                <p><a href="https://thetatau.org" target="_blank" rel="noopener">National Theta Tau</a></p>
+            </div>
+            <div>
+                <h2>Rush</h2>
+                <br>
+                <p><a>Information</a></p>
+                <p><a href="https://groupme.com/join_group/108277414/D26JcJPF" target="_blank" rel="noopener">Rush GroupMe</a></p>
+            </div>
+            <div>
+                <h2>Contact</h2>
+                <br>
+                <p><a href="https://www.instagram.com/phideltathetatau/" target="_blank" rel="noopener">Instagram</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

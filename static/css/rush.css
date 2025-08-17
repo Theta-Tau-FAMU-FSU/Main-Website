@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.Header {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.Header-Content {
+    display: flex;
+    justify-content: space-around;
+    width: 20vw;
+}
+
+.Header-Content a {
+    color: #800000;
+    font-size: large;
+    font-family: "Roboto";
+    text-decoration: none;
+
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: 0 100%;                     /* bottom left */
+    background-size: 0% 2px;                         /* start at 0 % width */
+
+    transition: background-size .3s ease;            /* swipe duration */
+
+}
+
+.Header-Content a:hover
+{
+    color: #dfb80c;
+    background-size: 100% 2px;                       /* grow to full width */
+    transition: color .3s ease, background-size .3s ease;            /* swipe duration */
+}
+
+.icon {
+    width: 5vh;
+}
+
+.recruit {
+    height: 50vh;
+    background-color: #ececec;
+}
+
+.timeline {
+    height: 50vh;
+}
+
+.info {
+    overflow-y: hidden;
+    height: 20vh;
+    background-color: #1f1f1f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.Links {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
+.Links div {
+    text-align: left;
+}
+
+.Links a {
+    color: white;
+    text-decoration: none;
+
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0% 2px;
+    transition: background-size .3s ease;
+}
+
+.Links a:hover {
+    background-size: 100% 1px;
+    transition: color .3s ease, background-size .3s ease;
+}

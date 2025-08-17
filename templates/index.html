@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Theta Tau | Phi Delta Chapter</title>
+    <title>Home | Phi Delta Chapter</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,11 +16,27 @@
             <img class="icon" src="{{ url_for('static', filename='images/ThetaTauIcon2.png') }}">
         </div>
         <div class="Header-Content">
-            <p><a href="https://thetatau.org" target="_blank" rel="noopener">Home</a></p>
-            <p><a href="https://thetatau.org" target="_blank" rel="noopener">Portfolio</a></p>
-            <p><a href="https://thetatau.org" target="_blank" rel="noopener">Rush</a></p>
+            <p><a href="{{ url_for('index') }}" target="_self" rel="noopener">Home</a></p>
+            <!-- <p><a href="https://thetatau.org" target="_blank" rel="noopener">Portfolio</a></p> -->
+            <p><a href="{{ url_for('rush') }}" target="_self" rel="noopener">Rush</a></p>
             <p><a href="https://thetatau.org" target="_blank" rel="noopener">More</a></p>
         </div>
+        <div class="off-screen-menu">
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('rush') }}">Rush</a></li>
+                <li><a href="#">More</a></li>
+            </ul>
+        </div>
+        <nav>
+            <div class="ham-menu" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <script src="/static/js/ham_menu.js"></script>
     </header>
     <div class="banner">
         <div>
@@ -54,6 +70,39 @@
             <p>Members of Theta Tau make an impact on the world around them through service and philanthropic acts.</p>
         </div>
     </div>
-    <div class="stuff"></div>
+    <div class="Rush">
+        <div>
+            <h1>Interested in rushing?</h1>
+            <h2>More information below!</h2>
+            <br>
+            <button>LEARN MORE</button>
+        </div>
+    </div>
+    <div class="info">
+        <div class="Links">
+            <div>
+                <h2>Theta Tau<br>Phi Delta</h2>
+                <br>
+                <p>Phi Delta Chapter</p>
+                <p>Tallahassee, Florida</p>
+            </div>
+            <div>
+                <h2>General</h2>
+                <br>
+                <p><a href="https://thetatau.org" target="_blank" rel="noopener">National Theta Tau</a></p>
+            </div>
+            <div>
+                <h2>Rush</h2>
+                <br>
+                <p><a>Information</a></p>
+                <p><a href="https://groupme.com/join_group/108277414/D26JcJPF" target="_blank" rel="noopener">Rush GroupMe</a></p>
+            </div>
+            <div>
+                <h2>Contact</h2>
+                <br>
+                <p><a href="https://www.instagram.com/phideltathetatau/" target="_blank" rel="noopener">Instagram</a></p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
