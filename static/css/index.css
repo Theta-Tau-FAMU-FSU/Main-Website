@@ -54,6 +54,11 @@
     z-index: 4;
     display: none;
 }
+
+.off-screen-menu li {
+    margin: 30px;
+}
+
 .off-screen-menu a {
     color: white;
 }
@@ -178,8 +183,11 @@ nav {
         padding-bottom: 50px;
     }
     .About p {
-        font-size: small;
+        font-size: medium;
         width: 400px;
+    }
+    .About {
+        height: 180px;
     }
     .Line {
         margin-right: 2rem;
@@ -189,7 +197,6 @@ nav {
 
 @media screen and (max-width: 400px ) {
     .About p {
-        font-size: small;
         width: 300px;
     }
 }
@@ -219,7 +226,7 @@ nav {
 .banner::after {
     content: "";
     position: absolute;
-    background: linear-gradient(rgba(80, 0, 0, 0.20));
+    background: linear-gradient(rgba(80, 0, 0, 0.30));
     inset: 0;
     pointer-events: none;
     z-index: 1;
@@ -484,7 +491,7 @@ nav {
         font-size: medium;
     }
     .cards p {
-        font-size: small;
+        font-size: medium;
     }
     .brotherhood {
         flex-direction: column;
