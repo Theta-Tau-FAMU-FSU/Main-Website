@@ -32,11 +32,89 @@
 
 }
 
-.Header-Content a:hover
-{
+.Header-Content a:hover {
     color: #dfb80c;
     background-size: 100% 2px;                       /* grow to full width */
     transition: color .3s ease, background-size .3s ease;            /* swipe duration */
+}
+
+.off-screen-menu {
+    background-color:  #800000;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: -1000px;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: .5s ease;
+    z-index: 4;
+    display: none;
+}
+.off-screen-menu a {
+    color: white;
+}
+
+.off-screen-menu.active {
+    right: 0;
+}
+
+nav {
+    padding: 1rem;
+    display: none;
+}
+
+.ham-menu {
+    height: 50px;
+    width: 40px;
+    margin-left: auto;
+    position: relative;
+    cursor: pointer;
+    display: none;
+}
+.ham-menu span {
+    z-index: 5;
+    height: 5px;
+    width: 100%;
+    background-color: #dfb80c;
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+
+}
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+.ham-menu span:nth-child(4) {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+}
+.ham-menu.active span {
+    background-color: white;
+}
+.ham-menu.active span:nth-child(4) {
+    background-color: transparent;
+}
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .icon {
@@ -66,8 +144,54 @@
     padding-bottom: 50px;
 }
 
-.brotherhood {
-    display: flex;
+.Line {
+    margin-left: 8rem;
+    margin-right: 8rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 1200px ) {
+    .About {
+        height: 160px;
+    }
+    .About h1 {
+        padding-bottom: 50px;
+    }
+    .About p {
+        font-size: medium;
+        width: 800px;
+    }
+}
+
+
+@media screen and (max-width: 800px ) {
+    .About p {
+        width: 600px;
+    }
+}
+
+
+@media screen and (max-width: 600px ) {
+    .About h1 {
+        font-size: x-large;
+        padding-bottom: 50px;
+    }
+    .About p {
+        font-size: small;
+        width: 400px;
+    }
+    .Line {
+        margin-right: 2rem;
+        margin-left: 2rem;
+    }
+}
+
+@media screen and (max-width: 400px ) {
+    .About p {
+        font-size: small;
+        width: 300px;
+    }
 }
 
 .banner {
@@ -101,6 +225,56 @@
     z-index: 1;
 }
 
+.banner h1 {
+    padding-bottom: 8px;
+    font-size: 3.5rem;
+}
+
+.banner h2 {
+    padding-bottom: 8px;
+    font-size: 3rem;
+}
+
+@media screen and (max-width: 1200px ) {
+    .banner h1 {
+        font-size: 3rem;
+    }
+    .banner h2 {
+    font-size: 2.5rem;
+}
+}
+
+
+@media screen and (max-width: 800px ) {
+    .banner h1 {
+        font-size: 2.5rem;
+    }
+    .banner h2 {
+    font-size: 2rem;
+}
+    .banner h3 {
+        text-align: center;
+        width: 300px;
+        font-size: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 600px ) {
+    .banner h1 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 400px ) {
+    .banner h1 {
+        font-size: 1.5rem;
+    }
+    .banner h2 {
+    font-size: 1.2rem;
+}
+}
+
 @supports (animation-timeline: scroll()) {
     .banner::before {
         animation: parallaxUp linear both;
@@ -120,16 +294,6 @@
     flex-direction: column;
     height: 30vh;
     z-index: 2;
-}
-
-.banner h1 {
-    padding-bottom: 8px;
-    font-size: 60px;
-}
-
-.banner h2 {
-    padding-bottom: 8px;
-    font-size: 40px;
 }
 
 .brotherhood {
@@ -152,19 +316,6 @@
     flex-direction: column;
     color: #800000;
     font-family: "Roboto";
-}
-
-@media screen and (min-width: 1200px) {
-    .cards p {
-        font-size: small;
-    }
-    
-}
-
-@media screen and (min-width: 1600px) {
-    .cards p {
-        font-size: large;
-    }
 }
 
 
@@ -211,13 +362,6 @@
 .Links a:hover {
     background-size: 100% 1px;
     transition: color .3s ease, background-size .3s ease;
-}
-
-.Line {
-    margin-left: 8rem;
-    margin-right: 8rem;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
 }
 
 .Rush {
@@ -299,4 +443,105 @@
 
 .Rush button:hover {
     transform: translateY(-8px);
+}
+
+@media screen and (max-width: 1200px ) {
+    .Rush h1 {
+        font-size: 3rem;
+    }
+    .Rush h2 {
+    font-size: 2.5rem;
+    }
+    .brotherhood {
+        height: 60vh;
+    }
+}
+
+
+@media screen and (max-width: 800px ) {
+    .Rush h1 {
+        font-size: 2.5rem;
+    }
+    .Rush h2 {
+    font-size: 2rem;
+    }
+    .Rush button {
+        font-size: x-small;
+        padding: 6px;
+    }
+    .Links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .Links div {
+        margin: 10px;
+        width: 130px;
+    }
+    .info {
+        height: 80vh;
+    }
+    .cards h2 {
+        font-size: medium;
+    }
+    .cards p {
+        font-size: small;
+    }
+    .brotherhood {
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 10px;
+        height: 160vh;
+    }
+    .cards {
+        width: 100%;
+        margin: 5px;
+    }
+    .cards p {
+        width: 350px;
+    }
+    .brotherhood-photo {
+        border-radius: 4px;
+        aspect-ratio: 16/9;
+        height: 35vh;
+    }
+    .off-screen-menu {
+        display: flex;
+    }
+    .ham-menu {
+    display: block;
+    }
+    .Header-Content {
+        display: none;
+    }
+    nav {
+    padding: 1rem;
+    display: flex;
+    }
+}
+
+
+@media screen and (max-width: 600px ) {
+    .Rush h1 {
+        font-size: 2rem;
+    }
+    .brotherhood {
+        height: 140vh;
+    }
+    .brotherhood-photo {
+        border-radius: 4px;
+        aspect-ratio: 16/9;
+        height: 25vh;
+    }
+}
+
+@media screen and (max-width: 400px ) {
+    .Rush h1 {
+        font-size: 1.5rem;
+    }
+    .Rush h2 {
+    font-size: 1.2rem;
+}
+    .cards p {
+        width: 300px;
+    }
 }

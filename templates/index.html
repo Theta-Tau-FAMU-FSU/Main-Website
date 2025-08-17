@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Theta Tau | Phi Delta Chapter</title>
+    <title>Home | Phi Delta Chapter</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,9 +18,25 @@
         <div class="Header-Content">
             <p><a href="{{ url_for('index') }}" target="_self" rel="noopener">Home</a></p>
             <!-- <p><a href="https://thetatau.org" target="_blank" rel="noopener">Portfolio</a></p> -->
-            <p><a href="https://thetatau.org" target="_blank" rel="noopener">Rush</a></p>
+            <p><a href="{{ url_for('rush') }}" target="_self" rel="noopener">Rush</a></p>
             <p><a href="https://thetatau.org" target="_blank" rel="noopener">More</a></p>
         </div>
+        <div class="off-screen-menu">
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('rush') }}">Rush</a></li>
+                <li><a href="#">More</a></li>
+            </ul>
+        </div>
+        <nav>
+            <div class="ham-menu" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <script src="/static/js/ham_menu.js"></script>
     </header>
     <div class="banner">
         <div>
