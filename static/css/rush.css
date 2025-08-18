@@ -1,6 +1,21 @@
 * {
     margin: 0;
+    font-family: "Roboto";
+}
+
+html {
     overflow-x: hidden;
+}
+
+body {
+    overflow-y: visible;
+    overflow-x: hidden;
+}
+
+:where(*):not(html, body) { overflow: clip; }
+
+@supports not (overflow: clip) {
+  :where(*):not(html, body) { overflow: hidden; }
 }
 
 .Header {
@@ -39,22 +54,156 @@
     transition: color .3s ease, background-size .3s ease;            /* swipe duration */
 }
 
+nav {
+    padding: 1rem;
+    display: none;
+}
+
+.off-screen-menu {
+    background-color:  #800000;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: -1000px;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: .5s ease;
+    z-index: 4;
+    display: none;
+}
+
+.off-screen-menu li {
+    margin: 30px;
+}
+
+.off-screen-menu a {
+    color: white;
+}
+
+.off-screen-menu.active {
+    right: 0;
+}
+
+.ham-menu {
+    height: 50px;
+    width: 40px;
+    margin-left: auto;
+    position: relative;
+    cursor: pointer;
+    display: none;
+}
+.ham-menu span {
+    z-index: 5;
+    height: 5px;
+    width: 100%;
+    background-color: #dfb80c;
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+
+}
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+.ham-menu span:nth-child(4) {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+}
+.ham-menu.active span {
+    background-color: white;
+}
+.ham-menu.active span:nth-child(4) {
+    background-color: transparent;
+}
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
 .icon {
     width: 5vh;
 }
 
 .recruit {
-    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     background-color: #ececec;
 }
 
-.timeline {
+.recruit > p {
+    width: 1200px;
+    margin-bottom: 20px;
+}
+
+.recruit > h1 {
+    width: 1200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #800000;
+}
+
+.recruit > h2 {
+    width: 1200px;
+    margin-bottom: 6px;
+    color: #800000;
+}
+
+.poster {
     height: 50vh;
+    margin-bottom: 20px;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+}
+
+.timeline > h1 {
+    margin: 40px;
+    width: 1200px;
+}
+
+.question {
+    margin-bottom: 25px;
+    width: 1200px;
+}
+
+.question > h2 {
+    color: #800000;
+}
+
+.question > p {
+    margin-top: 12px;
+}
+
+.requirements > li {
+    margin: 8px;
 }
 
 .info {
     overflow-y: hidden;
-    height: 20vh;
     background-color: #1f1f1f;
     display: flex;
     align-items: center;
@@ -64,6 +213,8 @@
 
 .Links {
     display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
     justify-content: space-around;
     width: 60%;
 }
@@ -86,4 +237,85 @@
 .Links a:hover {
     background-size: 100% 1px;
     transition: color .3s ease, background-size .3s ease;
+}
+
+@media screen and (max-width: 1200px) {
+    .recruit > p {
+        width: 800px;
+    }
+
+    .recruit > h1 {
+        width: 800px;
+    }
+
+    .recruit > h2 {
+        width: 800px;
+    }
+    .timeline > h1 {
+        width: 800px;
+    }
+    .question {
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .recruit > p {
+        width: 400px;
+    }
+
+    .recruit > h1 {
+        width: 400px;
+    }
+
+    .recruit > h2 {
+        width: 400px;
+    }
+    .timeline > h1 {
+        width: 400px;
+    }
+    .question {
+        width: 400px;
+    }
+    .off-screen-menu {
+        display: flex;
+    }
+    .ham-menu {
+        display: block;
+    }
+    .Header-Content {
+        display: none;
+    }
+    nav {
+        padding: 1rem;
+        display: flex;
+    }
+    .Links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .Links div {
+        margin: 10px;
+        width: 130px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .recruit > p {
+        width: 300px;
+    }
+
+    .recruit > h1 {
+        width: 300px;
+    }
+
+    .recruit > h2 {
+        width: 300px;
+    }
+    .timeline > h1 {
+        width: 300px;
+    }
+    .question {
+        width: 300px;
+    }
 }

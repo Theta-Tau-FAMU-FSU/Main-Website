@@ -10,6 +10,10 @@ def index():
 def rush():
     return render_template("rush.html")
 
+@app.route("/more")
+def more():
+    return render_template("more.html")
+
 
 if __name__ == "__main__":
     app.logger.debug("Hi")

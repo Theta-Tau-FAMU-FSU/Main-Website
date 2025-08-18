@@ -19,13 +19,13 @@
             <p><a href="{{ url_for('index') }}" target="_self" rel="noopener">Home</a></p>
             <!-- <p><a href="https://thetatau.org" target="_blank" rel="noopener">Portfolio</a></p> -->
             <p><a href="{{ url_for('rush') }}" target="_self" rel="noopener">Rush</a></p>
-            <p><a href="https://thetatau.org" target="_blank" rel="noopener">More</a></p>
+            <p><a href="{{ url_for('more') }}" target="_blank" rel="noopener">More</a></p>
         </div>
         <div class="off-screen-menu">
             <ul>
                 <li><a href="{{ url_for('index') }}">Home</a></li>
                 <li><a href="{{ url_for('rush') }}">Rush</a></li>
-                <li><a href="#">More</a></li>
+                <li><a href="{{ url_for('more') }}">More</a></li>
             </ul>
         </div>
         <nav>
@@ -75,7 +75,7 @@
             <h1>Interested in rushing?</h1>
             <h2>More information below!</h2>
             <br>
-            <button>LEARN MORE</button>
+            <button onclick="location.href='{{ url_for('rush') }}'">LEARN MORE</button>
         </div>
     </div>
     <div class="info">
@@ -94,7 +94,7 @@
             <div>
                 <h2>Rush</h2>
                 <br>
-                <p><a>Information</a></p>
+                <p><a href="{{ url_for('rush') }}" target="_blank" rel="noopener">Information</a></p>
                 <p><a href="https://groupme.com/join_group/108277414/D26JcJPF" target="_blank" rel="noopener">Rush GroupMe</a></p>
             </div>
             <div>
