@@ -19,15 +19,106 @@
             <p><a href="{{ url_for('index') }}" target="_self" rel="noopener">Home</a></p>
             <!-- <p><a href="https://thetatau.org" target="_blank" rel="noopener">Portfolio</a></p> -->
             <p><a href="{{ url_for('rush') }}" target="_self" rel="noopener">Rush</a></p>
-            <p><a href="https://thetatau.org" target="_blank" rel="noopener">More</a></p>
+            <p><a href="{{ url_for('more') }}" target="_blank" rel="noopener">More</a></p>
         </div>
+        <div class="off-screen-menu">
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('rush') }}">Rush</a></li>
+                <li><a href="{{ url_for('more') }}">More</a></li>
+            </ul>
+        </div>
+        <nav>
+            <div class="ham-menu" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <script src="/static/js/ham_menu.js"></script>
     </header>
     <div class="recruit">
         <h1>Recruitment</h1>
+        <h2>Rush</h2>
+        <p>Rush is your chance to learn more about Theta Tau.
+            Throughout several events, you’ll get a feel for what our fraternity represents,
+            whether you’re a good fit for us, and whether we’re a good fit for you.
+            At the end of rush, a select number of students will be invited to interviews
+            and may receive bids. Those offered bids can then choose whether they’d like to
+            continue the PNM process.</p>
+        <img class="poster" src="{{ url_for('static', filename='images/rush_poster.jpg') }}">
     </div>
     <div class="timeline">
-        <h1>Rush Timeline</h1>
-        <p>TBD</p>
+        <h1>FAQ</h1>
+        <div class="question">
+            <h2>What is Theta Tau?</h2>
+            <p>Theta Tau is a professional engineering fraternity founded in 1904.
+                We are built on the pillars of Brotherhood, Professionalism, and Service,
+                and we bring together engineers who want to grow personally and professionally.
+            </p>
+        </div>
+        <div class="question">
+            <h2>What is Rushing?</h2>
+            <p>Rush is a set of events where students can meet active members,
+                learn about Theta Tau, and see if it’s the right fit. It’s your opportunity to get to know us, and for us to get to know you.
+            </p>
+        </div>
+        <div class="question">
+            <h2>Is there any requirements to rush?</h2>
+            <p>Yes, there is! There's 6 requirements to rush listed below.</p>
+            <ul class="requirements">
+                <li>- Be 18 years of age or older</li>
+                <li>- Purse an ABET Accredited Engineering or Computer Science Major</li>
+                <li>- Have a college GPA (dual enrollment counts)</li>
+                <li>- Submit a rush application before the first day of rush</li>
+                <li>- Go to all events (4/4) with exception of one valid excuse.</li>
+                <li>- Complete a potential new member interview</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>What happens after rush?</h2>
+            <p>After rush, select students may be invited to interviews.
+                From there, some will receive bids to become PNMs for Theta Tau.
+            </p>
+        </div>
+        <div class="question">
+            <h2>How is the PNM process?</h2>
+            <p>The PNM process is where new members learn about Theta Tau’s history,
+                values, and traditions. It’s also a time to bond with your PNM class and
+                prepare to become a full member of the fraternity.
+            </p>
+        </div>
+        <div class="question">
+            <h2>Does Theta Tau Haze?</h2>
+            <p>No. Theta Tau does not haze.
+                Hazing is against our values, university policy, and the law.
+                Our PNM process is focused on education, service, and professional growth.
+            </p>
+        </div>
+        <div class="question">
+            <h2>Why should I join Theta Tau?</h2>
+            <p>Joining Theta Tau provides professional networking, leadership development,
+                service opportunities, and lifelong friendships. Members also gain access to
+                a strong alumni network across industries.
+            </p>
+        </div>
+        <div class="question">
+            <h2>How much time does Theta Tau require?</h2>
+            <p>Members usually attend weekly meetings along with professional, service, and social events.
+                The commitment is manageable and designed to complement your academic schedule.
+            </p>
+        </div>
+        <div class="question">
+            <h2>Are there dues?</h2>
+            <p>Yes. Like most fraternities, members pay dues, around 200 each semester. These support chapter operations, events, and national membership.
+            </p>
+        </div>
+        <div class="question">
+            <h2>Wait, I have more questions!</h2>
+            <p>Reach out to us at phideltarush@gmail.com or talk to a member during rush — we’d be happy to help.
+            </p>
+        </div>
     </div>
     <div class="info">
         <div class="Links">
@@ -40,12 +131,12 @@
             <div>
                 <h2>General</h2>
                 <br>
-                <p><a href="https://thetatau.org" target="_blank" rel="noopener">National Theta Tau</a></p>
+                <p><a href="https://thetatau.org" target="_parent" rel="noopener">National Theta Tau</a></p>
             </div>
             <div>
                 <h2>Rush</h2>
                 <br>
-                <p><a>Information</a></p>
+                <p><a href="{{ url_for('rush') }}" target="_self" rel="noopener">Information</a></p>
                 <p><a href="https://groupme.com/join_group/108277414/D26JcJPF" target="_blank" rel="noopener">Rush GroupMe</a></p>
             </div>
             <div>
