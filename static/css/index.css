@@ -499,6 +499,15 @@ nav {
     padding: 1rem;
     display: flex;
     }
+    .Links {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .Links div {
+        margin: 10px;
+        width: 400px;
+    }
 }
 
 @media screen and (max-width: 600px ) {
@@ -520,6 +529,9 @@ nav {
     font-size: 1.2rem;
 }
     .cards p {
+        width: 300px;
+    }
+    .Links div {
         width: 300px;
     }
 }
