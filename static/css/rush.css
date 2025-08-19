@@ -159,7 +159,6 @@ nav {
     width: 1200px;
     margin-top: 20px;
     margin-bottom: 20px;
-    color: #800000;
 }
 
 .recruit > h2 {
@@ -169,7 +168,7 @@ nav {
 }
 
 .poster {
-    height: 50vh;
+    height: 70vh;
     margin-bottom: 20px;
 }
 
@@ -293,10 +292,11 @@ nav {
     .Links {
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
     .Links div {
         margin: 10px;
-        width: 130px;
+        width: 400px;
     }
 }
 
@@ -316,6 +316,9 @@ nav {
         width: 300px;
     }
     .question {
+        width: 300px;
+    }
+    .Links div {
         width: 300px;
     }
 }
